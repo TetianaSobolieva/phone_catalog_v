@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './contacts.module.scss';
 import { BackButton } from '@components/ui/Buttons/Back/BackButton';
+const base = import.meta.env.BASE_URL;
 
 type TeamMember = {
   name: string;
@@ -16,7 +17,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Maksym Pukas',
     role: 'Team Lead · Full-Stack Developer',
-    photo: '/img/profile/Maksym.jpg',
+    photo: `${base}img/profile/Maksym.jpg`,
     email: 'maksym.pukas.fs@gmail.com',
     linkedin: 'https://www.linkedin.com/in/maksym-pukas-74a3383ab/',
     github: 'https://github.com/MaksOther',
@@ -34,7 +35,7 @@ const teamMembers: TeamMember[] = [
     name: 'Tetiana Sobolieva',
     role: 'Full-Stack Developer',
     photo:
-      'https://media.licdn.com/dms/image/v2/D4E03AQF_fuZentFH3g/profile-displayphoto-scale_200_200/B4EZxb310eJoAY-/0/1771067891449?e=1773273600&v=beta&t=dKXA42PFUC64pK1oz65JUQmdyUXI4OjnRCIQA4IGLYc',
+      'https://media.licdn.com/dms/image/v2/D4E03AQF_fuZentFH3g/profile-displayphoto-crop_800_800/B4EZxb310eJoAI-/0/1771067891360?e=1775692800&v=beta&t=Mq9C3rR5M2oQ-Av2AbrzQHHGK04E-9WNbnvcnu6RA6s',
     email: 'tetaina.sobolieva.s@gmail.com',
     linkedin: 'https://www.linkedin.com/in/fd-tetiana-sobolieva/',
     github: 'https://github.com/TetianaSobolieva',
@@ -42,7 +43,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Hanna Torianyk',
     role: 'Frontend Developer',
-    photo: '/img/profile/Hanna.jpg',
+    photo: `${base}img/profile/Hanna.jpg`,
     email: 'torianykhanna@gmail.com',
     linkedin: 'https://www.linkedin.com/in/hanna-torianyk/',
     github: 'https://github.com/torianykhanna',
@@ -51,7 +52,7 @@ const teamMembers: TeamMember[] = [
     name: 'Anastasiia Levochkina',
     role: 'Full-Stack Developer',
     photo:
-      'https://media.licdn.com/dms/image/v2/D4E03AQGsvYquiMNgWA/profile-displayphoto-scale_200_200/B4EZxZsWDoJMAY-/0/1771031325551?e=1773273600&v=beta&t=PISBZhaw9f6GCse1YPtgPQPIU57snZG7_vyY5KrExJc',
+      'https://media.licdn.com/dms/image/v2/D4E03AQGsvYquiMNgWA/profile-displayphoto-crop_800_800/B4EZxZsWDoJMAI-/0/1771031325465?e=1775692800&v=beta&t=RZp5qcAza7IkDEMRn0LR3JMXqInOyv_RGt4We2gSd5U',
     email: 'nastya.mixaylova98@gmail.com',
     linkedin:
       'https://www.linkedin.com/in/anastasiia-levochkina-79a8263b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
