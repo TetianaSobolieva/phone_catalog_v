@@ -26,7 +26,7 @@ export const CartProduct: React.FC<Props> = ({
   const { i18n } = useTranslation();
 
   const imagePath = 'images' in product ? product.images[0] : product.image;
-  const imageUrl = `/${imagePath}`;
+  const imageUrl = `${import.meta.env.BASE_URL}${imagePath}`;
 
   const currentPrice =
     product.priceDiscount ?? ('price' in product ? product.price : 0);
