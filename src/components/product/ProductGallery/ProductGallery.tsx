@@ -52,7 +52,7 @@ export const ProductGallery: React.FC<Props> = ({ images, name }) => {
             onClick={() => handleThumbClick(img)}
           >
             <img
-              src={`/${img}`}
+              src={`${import.meta.env.BASE_URL}${img}`}
               alt={`${name} thumbnail ${index + 1}`}
             />
           </div>

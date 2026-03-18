@@ -31,7 +31,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       : product.images
     : 'image' in product ? product.image
     : '';
-  const imageUrl = imagePath ? `/${imagePath}` : '';
+  const imageUrl = imagePath ? `${import.meta.env.BASE_URL}${imagePath}` : '';
 
   const idString = stringId.toLowerCase();
   let category = 'phones';
