@@ -1,4 +1,9 @@
-# 📱 Phone Catalog V — Full-Stack E-Commerce App
+# 📱 Phone Catalog — Full-Stack E-Commerce App
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=white)
 Modern full-stack phone catalog with real payment processing, delivery integration, and multi-language support.
 **Payments** — Stripe checkout integration
 **Delivery** — NovaPoshta API for shipping
