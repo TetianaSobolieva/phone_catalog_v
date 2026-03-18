@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styles from '../HomePage.module.scss';
 
+const base = import.meta.env.BASE_URL;
+
 interface Props {
   phonesCount: number;
   tabletsCount: number;
@@ -26,7 +28,7 @@ export const CategorySection: React.FC<Props> = ({
         >
           <div className={styles['category-card__image-wrapper']}>
             <img
-              src="/img/categories/category-phones.png"
+              src={`${base}img/categories/category-phones.png`}
               alt="Phones"
               className={styles['category-card__image']}
             />
@@ -47,7 +49,7 @@ export const CategorySection: React.FC<Props> = ({
         >
           <div className={styles['category-card__image-wrapper']}>
             <img
-              src="/img/categories/category-tablets.png"
+              src={`${base}img/categories/category-tablets.png`}
               alt="Tablets"
               className={styles['category-card__image-tablets']}
             />
@@ -68,7 +70,7 @@ export const CategorySection: React.FC<Props> = ({
         >
           <div className={styles['category-card__image-wrapper']}>
             <img
-              src="/img/categories/category-accessories.png"
+              src={`${base}img/categories/category-accessories.png`}
               alt="Accessories"
               className={styles['category-card__image-access']}
             />
