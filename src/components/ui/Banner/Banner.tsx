@@ -6,6 +6,15 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './Banner.scss';
 
+const base = import.meta.env.BASE_URL;
+
+const slides = [
+  { desktop: 'banner-desktop-1.png', phone: 'banner-phone-1.png', alt: 'iPhone 14 Pro' },
+  { desktop: 'banner-desktop-2.png', phone: 'banner-phone-2.png', alt: 'New Models' },
+  { desktop: 'banner-desktop-3.png', phone: 'banner-phone-3.png', alt: 'Tablets' },
+  { desktop: 'banner-desktop-4.png', phone: 'banner-phone-4.png', alt: 'Accessories' },
+];
+
 export const Banner = () => {
   return (
     <div className="banner">
@@ -18,80 +27,29 @@ export const Banner = () => {
           slidesPerView={1}
           loop={true}
           speed={800}
-          autoplay={{
-            delay: 7000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          pagination={{
-            clickable: true,
-            el: '.banner__pagination',
-          }}
-          navigation={{
-            prevEl: '.swiper-btn-prev',
-            nextEl: '.swiper-btn-next',
-          }}
+          autoplay={{ delay: 7000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+          pagination={{ clickable: true, el: '.banner__pagination' }}
+          navigation={{ prevEl: '.swiper-btn-prev', nextEl: '.swiper-btn-next' }}
         >
-          <SwiperSlide>
-            <picture>
-              <source
-                media="(max-width: 639px)"
-                srcSet="/img/banners/banner-phone-1.png"
-              />
-              <img
-                src="/img/banners/banner-desktop-1.png"
-                alt="iPhone 14 Pro"
-                className="banner__image"
-              />
-            </picture>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <picture>
-              <source
-                media="(max-width: 639px)"
-                srcSet="/img/banners/banner-phone-2.png"
-              />
-              <img
-                src="/img/banners/banner-desktop-2.png"
-                alt="New Models"
-                className="banner__image"
-              />
-            </picture>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <picture>
-              <source
-                media="(max-width: 639px)"
-                srcSet="/img/banners/banner-phone-3.png"
-              />
-              <img
-                src="/img/banners/banner-desktop-3.png"
-                alt="Tablets"
-                className="banner__image"
-              />
-            </picture>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <picture>
-              <source
-                media="(max-width: 639px)"
-                srcSet="/img/banners/banner-phone-4.png"
-              />
-              <img
-                src="/img/banners/banner-desktop-4.png"
-                alt="Accessories"
-                className="banner__image"
-              />
-            </picture>
-          </SwiperSlide>
+          {slides.map(({ desktop, phone, alt }) => (
+            <SwiperSlide key={desktop}>
+              <picture>
+                <source
+                  media="(max-width: 639px)"
+                  srcSet={`${base}img/banners/${phone}`}
+                />
+                <img
+                  src={`${base}img/banners/${desktop}`}
+                  alt={alt}
+                  className="banner__image"
+                />
+              </picture>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
 
       <button className="banner__arrow banner__arrow--next swiper-btn-next" />
-
       <div className="banner__pagination" />
     </div>
   );
