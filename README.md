@@ -1,9 +1,10 @@
-# React TypeScript Starter Pack
-
-To use this template click `Use this template`
-
-### Available Scripts
-
-`Deploy` - available to deploy your application to gh-pages, to deploy the project, change the second line of code in package.json, specifically the homepage value, from "." to the repository name
-
-`SCSS Preprocessor` - available to write your styles with modern style language
+# 📱 Phone Catalog V — Full-Stack E-Commerce App
+Modern full-stack phone catalog with real payment processing, delivery integration, and multi-language support.
+**Payments** — Stripe checkout integration
+**Delivery** — NovaPoshta API for shipping
+**i18n** — Multi-language support across the full application
+**Search & Filter** — Advanced product catalog with search and filtering
+**Infra** — Deployed on GitHub Pages with Supabase backend
+**Stack**: React · TypeScript · Supabase · REST API · Redux Toolkit · Stripe API · NovaPoshta API · i18n · GitHub Pages
+## 🔗 Demo
+[Live Demo](https://tetianasobolieva.github.io/phone_catalog_v/)
