@@ -2,9 +2,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: '/',
+  base: command === 'build' ? '/phone_catalog_voltrix/' : '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -20,6 +20,5 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, './src/utils'),
     },
   },
-
   server: { host: true },
-});
+}));
