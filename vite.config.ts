@@ -4,7 +4,7 @@ import path from 'path';
 
 export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: command === 'build' ? '/phone_catalog_voltrix/' : '/',
+  base: command === 'build' ? '/phone_catalog_v/' : '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
