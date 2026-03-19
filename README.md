@@ -4,6 +4,7 @@
 ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
 ![Sass](https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=white)
+
 Modern full-stack phone catalog with real payment processing, delivery integration, and multi-language support.
 **Payments** — Stripe checkout integration
 **Delivery** — NovaPoshta API for shipping
