@@ -16,6 +16,7 @@ Modern full-stack phone catalog with real payment processing, delivery integrati
 ## 🔗 Demo
 [View Live Demo](https://tetianasobolieva.github.io/phone_catalog_v/)
 ---
+---
 # 🚀 Tech Stack
 ## Frontend
 * React
