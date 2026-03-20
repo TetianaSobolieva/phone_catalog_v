@@ -38,7 +38,7 @@ Modern full-stack phone catalog with real payment processing, delivery integrati
 * Fuzzy search using Fuse.js
 * Multi-language support with i18next
 * Smooth UI animations using Framer Motion
-* Shopping cart functionality
+* Shopping cart functionality with Contex API and Local Storage
 * Secure Stripe checkout
 * Delivery integration via NovaPoshta API
 * Supabase authentication and database
