@@ -11,7 +11,7 @@ Modern full-stack phone catalog with real payment processing, delivery integrati
 * **i18n** — Multi-language support across the full application
 * **Search & Filter** — Advanced product catalog with search and filtering
 * **Infra** — Deployed on GitHub Pages with Supabase backend
-* **Stack**: React · TypeScript · Supabase · REST API · Redux Toolkit · Stripe API · NovaPoshta API · i18n · GitHub Pages
+* **Stack**: React · TypeScript · Supabase · REST API · Contex API · Stripe API · NovaPoshta API · i18n · GitHub Pages
   
 ## 🔗 Demo
 [View Live Demo](https://tetianasobolieva.github.io/phone_catalog_v/)
