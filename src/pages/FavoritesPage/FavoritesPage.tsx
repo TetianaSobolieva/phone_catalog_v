@@ -38,8 +38,10 @@ export const FavoritesPage: React.FC = () => {
   }, []);
 
   const favoriteProducts = useMemo(() => {
-    return allProducts.filter((product) =>
-      favorites.includes(String(product.itemId)),
+    return allProducts.filter(
+      product =>
+        favorites.includes(String(product.itemId)) ||
+        favorites.includes(String(product.id)),
     );
   }, [allProducts, favorites]);
 
@@ -63,16 +65,14 @@ export const FavoritesPage: React.FC = () => {
           </span>
         </div>
 
-        {favoriteProducts.length > 0 ?
+        {favoriteProducts.length > 0 ? (
           <div className="favorites-page__all-favorites">
-            {favoriteProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-              />
+            {favoriteProducts.map(product => (
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
-        : <div className="favorites-page__empty">
+        ) : (
+          <div className="favorites-page__empty">
             <div className="favorites-page__heart">
               <Heart />
             </div>
@@ -82,14 +82,11 @@ export const FavoritesPage: React.FC = () => {
             <p className="favorites-page__items-number">
               {t('page_favorites.empty_text')}
             </p>
-            <Link
-              to="/"
-              className="favorites-page__addToCart"
-            >
+            <Link to="/" className="favorites-page__addToCart">
               {t('cart.shop_now')}
             </Link>
           </div>
-        }
+        )}
       </div>
     </div>
   );

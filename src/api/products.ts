@@ -1,36 +1,58 @@
+import productsData from './data/products.json';
+import phonesData from './data/phones.json';
+import tabletsData from './data/tablets.json';
+import accessoriesData from './data/accessories.json';
+
 import { Product, ProductDetails } from '../types/Product';
 
-const BASE_URL = 'https://phone-catalog-backend-k2qc.onrender.com';
+const products = productsData as Product[];
 
 export const getProducts = async (): Promise<Product[]> => {
-  const response = await fetch(`${BASE_URL}/api/products`);
-  return response.json();
+  return products;
 };
 
 export const getPhones = async (): Promise<Product[]> => {
-  const products = await getProducts();
-  return products.filter((product) => product.category === 'phones');
+  return products.filter(product => product.category === 'phones');
 };
 
 export const getTablets = async (): Promise<Product[]> => {
-  const products = await getProducts();
-  return products.filter((product) => product.category === 'tablets');
+  return products.filter(product => product.category === 'tablets');
 };
 
 export const getAccessories = async (): Promise<Product[]> => {
-  const products = await getProducts();
-  return products.filter((product) => product.category === 'accessories');
+  return products.filter(product => product.category === 'accessories');
 };
 
 export const getProductDetails = async (
-  _category: string,
+  category: string,
   itemId: string,
 ): Promise<ProductDetails> => {
-  const response = await fetch(`${BASE_URL}/api/products/${itemId}`);
+  let categoryProducts: ProductDetails[];
 
-  if (!response.ok) {
+  switch (category) {
+    case 'phones':
+      categoryProducts = phonesData as ProductDetails[];
+      break;
+
+    case 'tablets':
+      categoryProducts = tabletsData as ProductDetails[];
+      break;
+
+    case 'accessories':
+      categoryProducts = accessoriesData as ProductDetails[];
+      break;
+
+    default:
+      throw new Error(`Unknown category: ${category}`);
+  }
+
+  const product = categoryProducts.find(
+    product => product.id === itemId,
+  );
+
+  if (!product) {
     throw new Error(`Product not found: ${itemId}`);
   }
 
-  return response.json();
+  return product;
 };

@@ -43,11 +43,13 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
-  const getItemUniqueId = useCallback(
-    (product: BaseProduct) =>
-      String('itemId' in product ? product.itemId : product.id),
-    [],
-  );
+const getItemUniqueId = useCallback((product: BaseProduct) => {
+  if ('itemId' in product && product.itemId) {
+    return String(product.itemId);
+  }
+
+  return String(product.id);
+}, []);
 
   const addToCart = useCallback(
     (product: BaseProduct) => {
